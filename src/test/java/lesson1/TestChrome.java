@@ -37,7 +37,7 @@ public class TestChrome {
 
     @AfterTest
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 
     private void inputFields(String value) {

@@ -9,8 +9,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 
 public class TestChrome {
     WebDriver driver;
@@ -21,23 +19,25 @@ public class TestChrome {
         driver.get("https://www.google.by/ ");
     }
 
-    @Test
+    @Test(priority = 2)
     public void search() {
         inputFields("Привет, мир");
         WebElement results = driver.findElement(By.id("result-stats"));
         Assert.assertTrue(results.isDisplayed(), "Поиск не отработал корректно");
     }
 
-    @Test
+    @Test(priority = 1)
     public void testSearchSkipTests() {
         inputFields("-DskipTests=true");
         WebElement error = driver.findElement(By.xpath("//p[@style='margin-top:1em']"));
         Assert.assertTrue(error.isDisplayed(), "Элемент не отображается");
+        WebElement element = driver.findElement(By.id("logo"));
+        element.click();
     }
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 
     private void inputFields(String value) {

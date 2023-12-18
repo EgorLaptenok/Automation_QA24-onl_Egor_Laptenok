@@ -1,15 +1,28 @@
 package pageObjects.baseObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Arrays;
 
 import static driver.DriverCreation.getDriver;
 
 public abstract class BasePage {
+protected WebDriverWait wait;
+protected WebDriver driver;
+    {
+        driver = getDriver();
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(2));
+    }
+    protected void navigateTo(String url){
+        System.out.println("Navigate to :: " + url);
+        driver.get(url);
+    }
     protected void click(By by) {
-        click(getDriver().findElement(by));
+        click(driver.findElement(by));
     }
 
     protected void click(WebElement element) {
@@ -18,7 +31,7 @@ public abstract class BasePage {
     }
 
     protected void sendKeys(By by, CharSequence... charSequence) {
-        sendKeys(getDriver().findElement(by), charSequence);
+        sendKeys(driver.findElement(by), charSequence);
     }
 
     protected void sendKeys(WebElement element, CharSequence... charSequence) {

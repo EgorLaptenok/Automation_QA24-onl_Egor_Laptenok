@@ -37,6 +37,7 @@ protected WebDriver driver;
     protected void sendKeys(WebElement element, CharSequence... charSequence) {
         System.out.println("Enter in element ::" + element + ", next value ::" + Arrays.toString(charSequence));
         element.click();
+        element.clear();
         element.sendKeys(charSequence);
     }
 }

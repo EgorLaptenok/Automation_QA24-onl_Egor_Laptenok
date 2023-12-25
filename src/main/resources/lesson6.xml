@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="lesson 6">
+    <parameter name="url" value="https://www.saucedemo.com/"/>
+    <parameter name="usernamePass" value="standard_user"/>
+    <parameter name="passwordPass" value="secret_sauce"/>
+    <test name="lesson 6">
+        <classes>
+            <class name="lesson6.sauceDemoTwoTests"/>
+        </classes>
+    </test>
+</suite>

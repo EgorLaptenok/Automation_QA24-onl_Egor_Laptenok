@@ -1,24 +1,24 @@
 package lesson6;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.sauceDemoTwo.CartPage;
 import pageObjects.sauceDemoTwo.LoginPage;
 import pageObjects.sauceDemoTwo.ProductsPage;
 
-public class sauceDemoTwoTests extends BaseTest {
+public class SauceDemoTwoTests extends BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
     int count = 0;
     String usernamePass;
     String passwordPass;
-    @Parameters({"url","usernamePass","passwordPass"})
+
+    @Parameters({"url", "usernamePass", "passwordPass"})
     @BeforeTest
-    public void precondition(String url,String usernamePass,String passwordPass) {
+    public void precondition(@Optional("https://www.saucedemo.com/") String url,
+                             @Optional("standard_user") String usernamePass,
+                             @Optional("secret_sauce") String passwordPass) {
         loginPage = new LoginPage();
         productsPage = new ProductsPage();
         cartPage = new CartPage();
@@ -82,11 +82,12 @@ public class sauceDemoTwoTests extends BaseTest {
                 {"Test.allTheThings() T-Shirt (Red)"}
         };
     }
-    @Test(invocationCount = 6,priority = 3)
-    public void addProductCountTest(){
-        if(count==0) {
-            loginPage.enterLogin("standard_user");
-            loginPage.enterPassword("secret_sauce");
+
+    @Test(invocationCount = 6, priority = 3)
+    public void addProductCountTest() {
+        if (count == 0) {
+            loginPage.enterLogin(usernamePass);
+            loginPage.enterPassword(passwordPass);
             loginPage.clickLogin();
         }
         productsPage.verifyPage();

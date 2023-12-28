@@ -12,23 +12,37 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <testng.version>7.8.0</testng.version>
+        <slenium.version>4.15.0</slenium.version>
+        <suite/>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.8.0</version>
+            <version>${testng.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.15.0</version>
+            <version>${slenium.version}</version>
         </dependency>
-
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src\main\resources\${suite}.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

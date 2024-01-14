@@ -8,9 +8,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import testngUtils.Retry;
 
 
-public class TestChrome {
+public class TestChrome{
     WebDriver driver;
 
     @BeforeTest
@@ -19,7 +20,7 @@ public class TestChrome {
         driver.get("https://www.google.by/ ");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2,retryAnalyzer = Retry.class)
     public void search() {
         inputFields("Привет, мир");
         WebElement results = driver.findElement(By.id("result-stats"));

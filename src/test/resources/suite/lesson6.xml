@@ -9,4 +9,16 @@
             <class name="lesson6.SauceDemoTwoTests"/>
         </classes>
     </test>
+
+    <test name="heroku">
+        <classes>
+            <class name="lesson5.HerokuTests"/>
+        </classes>
+    </test>
+
+    <test name="loginTest">
+        <classes>
+            <class name="lesson4.LoginTests"/>
+        </classes>
+    </test>
 </suite>

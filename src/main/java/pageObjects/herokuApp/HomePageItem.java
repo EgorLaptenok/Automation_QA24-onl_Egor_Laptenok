@@ -3,7 +3,8 @@ package pageObjects.herokuApp;
 public enum HomePageItem {
     DYNAMIC_CONTROLS("Dynamic Controls"),
     FRAMES("Frames"),
-    IFRAME("iFrame");
+    IFRAME("iFrame"),
+    FILE_DOWNLOAD("File Download");
 
     private final String item;
 

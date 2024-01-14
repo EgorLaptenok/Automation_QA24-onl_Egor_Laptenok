@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test only">
-    <test name="first">
+<suite name="WithProperties">
+    <test name="SauceDemoWithProperties">
         <classes>
-            <class name="lesson5.HerokuTests"/>
+            <class name="lesson6.SauceDemoWithPropertiesTests"/>
         </classes>
     </test>
-
 </suite>

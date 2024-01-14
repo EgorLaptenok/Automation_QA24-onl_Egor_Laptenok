@@ -3,6 +3,8 @@ package pageObjects.baseObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -22,6 +24,7 @@ protected WebDriver driver;
         driver.get(url);
     }
     protected void click(By by) {
+        wait.until(ExpectedConditions.elementToBeClickable(by));
         click(driver.findElement(by));
     }
 

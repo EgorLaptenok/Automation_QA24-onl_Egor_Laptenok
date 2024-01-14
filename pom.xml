@@ -14,6 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.8.0</testng.version>
         <slenium.version>4.15.0</slenium.version>
+        <extentreports.version>2.41.2</extentreports.version>
+        <allure.version>2.25.0</allure.version>
         <suite/>
     </properties>
 
@@ -29,6 +31,20 @@
             <artifactId>selenium-java</artifactId>
             <version>${slenium.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <plugins>
@@ -42,6 +58,12 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+            </plugin>
+
         </plugins>
     </build>
 

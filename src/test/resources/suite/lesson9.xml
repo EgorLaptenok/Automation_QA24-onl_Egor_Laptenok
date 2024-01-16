@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="lesson 9">
+    <test name="Stream Api">
+        <classes>
+            <class name="lesson9.StreamAPITest"/>
+        </classes>
+    </test>
+
+    <test name="Data Table">
+        <classes>
+            <class name="lesson9.HerokuDataTableTest"/>
+        </classes>
+    </test>
+</suite>

@@ -4,7 +4,8 @@ public enum HomePageItem {
     DYNAMIC_CONTROLS("Dynamic Controls"),
     FRAMES("Frames"),
     IFRAME("iFrame"),
-    FILE_DOWNLOAD("File Download");
+    FILE_DOWNLOAD("File Download"),
+    DATA_TABLES("Sortable Data Tables");
 
     private final String item;
 

@@ -26,7 +26,7 @@ public class ValueObjectTest extends BaseTest {
                 .waitUntilPageLoaded()
                 .login(new User() {{
                     setUsername("standard_user");
-                    setPassword("secret_sauce");
+                    setPassword(getPassword());
                 }})
                 .clickLogin();
         productPage.logOut();
@@ -43,15 +43,15 @@ public class ValueObjectTest extends BaseTest {
     @DataProvider(name = "get user")
     public Object[][] getUserData() {
         return new Object[][]{
-                {new UserBuilder.Builder()
+                {UserBuilder.builder()
                         .withUsername("standard_user")
                         .withPassword("secret_sauce")
                         .build()},
-                {new UserBuilder.Builder()
+                {UserBuilder.builder()
                         .withUsername("problem_user")
                         .withPassword("secret_sauce")
                         .build()},
-                {new UserBuilder.Builder()
+                {UserBuilder.builder()
                         .withUsername("performance_glitch_user")
                         .withPassword("secret_sauce")
                         .build()},

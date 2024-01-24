@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="lesson 10">
-    <test name="Login Page" enabled="false">
+<suite name="lesson 10" parallel="tests" thread-count="3">
+    <test name="Login Page" enabled="true">
         <classes>
             <class name="lesson10.SauceDemoWithFactoryTests"/>
         </classes>
     </test>
-    <test name="Product Page" enabled="false">
+    <test name="Product Page" enabled="true">
         <classes>
             <class name="lesson10.ProductPageFactoryTest"/>
         </classes>

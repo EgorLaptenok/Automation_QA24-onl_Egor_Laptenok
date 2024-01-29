@@ -76,7 +76,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\main\resources\${suite}.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suite/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

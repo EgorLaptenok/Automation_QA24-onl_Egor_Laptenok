@@ -13,12 +13,13 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.8.0</testng.version>
-        <slenium.version>4.15.0</slenium.version>
+        <slenium.version>4.13.0</slenium.version>
         <extentreports.version>2.41.2</extentreports.version>
         <allure.version>2.25.0</allure.version>
         <lombok.version>1.18.30</lombok.version>
         <log4j-core.version>2.22.1</log4j-core.version>
         <log4j.version>1.2.17</log4j.version>
+        <selenide.version>6.19.1</selenide.version>
         <suite/>
     </properties>
 
@@ -64,6 +65,12 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
 
 

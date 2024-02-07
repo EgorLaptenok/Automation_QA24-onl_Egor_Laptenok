@@ -16,17 +16,21 @@ public class HomePage {
     private final SelenideElement date2 = $("input#yDate2");
 
     public HomePage enterFrom(String from) {
-        this.from.should(visible).sendKeys(from);
+        this.from.should(visible).clear();
+        this.from.sendKeys(from);
         return this;
     }
 
     public HomePage enterTo(String to) {
-        this.to.should(visible).sendKeys(to);
+        this.to.should(visible).clear();
+        this.to.sendKeys(to);
         return this;
     }
 
     public HomePage enterDate(String date) {
-        this.date.should(visible).sendKeys(date);
+        this.date.should(visible).clear();
+        this.date.sendKeys(date);
+        this.date.pressEnter();
         return this;
     }
 
@@ -47,7 +51,9 @@ public class HomePage {
     }
 
     public HomePage enterDate2(String date2) {
-        this.date2.should(visible).sendKeys(date2);
+        this.date2.should(visible).clear();
+        this.date2.sendKeys(date2);
+        this.date2.pressEnter();
         return this;
     }
 }

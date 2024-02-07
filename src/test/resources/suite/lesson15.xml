@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="lesson 15">
+    
+    <listeners>
+        <listener class-name="testngUtils.SelenideListener"/>
+    </listeners>
+    
+    <test name="RabotaBy">
+        <classes>
+            <class name="lesson15.RunRabotaByTests"/>
+        </classes>
+    </test>
+</suite>

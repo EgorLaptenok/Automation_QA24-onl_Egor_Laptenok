@@ -24,7 +24,7 @@ public class RouteSearchTests extends BaseTestSelenide {
         get(HomePage.class)
                 .enterFrom("Минск")
                 .enterTo("Брест")
-                .enterDate("15.02.2024")
+                .enterDate("12.02.2024")
                 .clickSearch();
         get(SearchPage.class).map("Брест");
         back();

@@ -20,7 +20,7 @@ public class StationSearchTests extends BaseTestSelenide {
     public void DepartureTimeFilterTests() {
         get(HomePage.class)
                 .switchToStation()
-                .enterDate2("05.02.2024")
+                .enterDate2("17.02.2024")
                 .enterSearchStation("Минск-Пассажирский");
         get(FormOfProtection.class)
                 .clickButton()

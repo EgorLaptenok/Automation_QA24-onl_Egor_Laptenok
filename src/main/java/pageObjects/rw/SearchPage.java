@@ -2,6 +2,7 @@ package pageObjects.rw;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import lombok.extern.log4j.Log4j;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +11,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-
+@Log4j
 public class SearchPage {
     private final ElementsCollection routeElement = $$("[class='sch-table__route']");
     private final ElementsCollection travelTimeElement = $$("[class='sch-table__duration train-duration-time']");
@@ -27,9 +28,9 @@ public class SearchPage {
 
     public SearchPage map(String route) {
         for (Map.Entry<String, String> entry : parseSearchResults(route).entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            log.info(entry.getKey() + ": " + entry.getValue());
         }
-        System.out.println("___________________________________");
+        log.info("___________________________________");
         return this;
     }
 

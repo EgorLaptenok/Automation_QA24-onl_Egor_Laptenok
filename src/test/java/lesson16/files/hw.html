@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<style>
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+table th, table td {
+	border: 1px solid #888;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+}
+
+table td:hover {
+	background: #fffabe;
+}
+table td:hover:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	border: 3px solid orange;
+}
+table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+}
+table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+.placeholder-box {
+	display: block;
+	position: relative;
+	margin: 20px 0;
+}
+.placeholder-box input {
+	display: block;
+	box-sizing: border-box;
+	width: 20%;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #495057;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 5px;
+}
+.placeholder-text {
+	display: none;
+	width: 20%;
+	line-height: 37px;
+	position: absolute;
+	left: 10px;
+	top: 0;
+	bottom: 0;
+	color: #888;
+	cursor: text;
+	user-select: none;
+}
+
+.placeholder-box input:invalid + .placeholder-text {
+	display: block;
+}
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0 0 10px;
+    display: grid;
+    cursor: grab;
+    width: 55px;
+    height: 60px;
+}
+
+fieldset:hover {
+    background: #eee;
+}
+
+input[type="checkbox"] {
+    margin: 20px;
+    accent-color: #03a9f4
+
+    }
+.checkbox{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+}
+legend {
+            font-weight: bold;
+            line-height: 1.5;
+            padding: 2px;
+            margin: -15px;
+        }
+select {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 200px;
+  cursor: pointer;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+fieldset {
+            display: inline-block;
+            margin-right: 20px;
+        }
+button{
+    margin: auto;
+    display: block;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: 5px solid #ccc;
+    border-radius: 15px;
+    background-color: #eeeeee;
+    color: #784c4c;
+    width: 200px;
+    cursor: pointer;
+}
+button:hover {
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+button:hover:before {
+	width: 100%;
+}
+img{
+    display: block;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    box-sizing: border-box;
+}
+p{
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    line-height: 37px;
+    font-size: 30px;
+}
+a{
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #2f2c24a8;
+    line-height: 30px;
+    font-size: 20px;
+}
+</style>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+<p>This is some text in a paragraph.</p>
+<br>
+<a href="https://www.google.com">Open google</a>
+<br>
+<table style="width:100%">
+    <tr>
+        <th>Name</th>
+        <th>Group</th>
+        <th>Mark</th>
+    </tr>
+    <tr>
+        <td>Tom</td>
+        <td>A505</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Dora</td>
+        <td>A504</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Pol</td>
+        <td>B404</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Katya</td>
+        <td>B301</td>
+        <td>10</td>
+    </tr>
+</table>
+<form>
+    <label class="placeholder-box name">
+        <input required type="text">
+        <div class="placeholder-text">Input: <span style="color: green;">First name</span></div>
+    </label>
+
+    <label class="placeholder-box lastname">
+        <input required type="text">
+        <div class="placeholder-text">Input: <span style="color: green;">Last name</span></div>
+    </label>
+
+    <fieldset>
+        <legend>Checkbox 1</legend>
+        <input type="checkbox"/>
+    </fieldset>
+    <fieldset>
+        <legend>Checkbox 2</legend>
+        <input type="checkbox"/>
+    </fieldset>
+    <label for="city">Choose a city:</label>
+    <select name="city" id="city">
+        <option value="Minsk">Minsk</option>
+        <option value="Grodno">Grodno</option>
+        <option value="Brest">Brest</option>
+        <option value="Gomel">Gomel</option>
+        <option value="Vitebsk">Vitebsk</option>
+        <option value="Mogilev">Mogilev</option>
+    </select>
+    <br>
+    <button type="button">Click Me!</button>
+    <br>
+    <br>
+    <img src="https://cdn.pixabay.com/photo/2024/01/27/18/24/squirrel-8536537_1280.jpg" alt="squirrel" width="300" height="200">
+</form>
+</body>
+</html>
